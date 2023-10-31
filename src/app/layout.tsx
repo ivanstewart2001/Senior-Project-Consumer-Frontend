@@ -9,7 +9,6 @@ import Footer from "@/shared/Footer/Footer";
 import MusicPlayer from "@/components/MusicPlayer/MusicPlayer";
 import SiteHeader from "@/app/SiteHeader";
 import UnauthenticatedSiteHeader from "./UnauthenticatedSiteHeader";
-import useAuthentication from "@/hooks/authenticationStatus";
 
 export const AuthContext = createContext({
   isAuthenticated: false,

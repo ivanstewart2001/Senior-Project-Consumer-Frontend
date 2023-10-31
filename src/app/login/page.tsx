@@ -72,7 +72,7 @@ const PageLogin = () => {
             className="grid grid-cols-1 gap-6"
             onSubmit={(e) => {
               e.preventDefault();
-              router.push("/search");
+              router.push("/home");
               toggleAuthentication();
             }}
           >

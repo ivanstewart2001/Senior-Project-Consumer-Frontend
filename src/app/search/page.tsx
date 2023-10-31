@@ -87,15 +87,6 @@ const PageSearch = ({}) => {
             <ButtonPrimary loading>Show me more</ButtonPrimary>
           </div>
         </main>
-
-        {/* === SECTION 5 === */}
-        <div className="relative py-16 lg:py-28">
-          <BackgroundSection />
-          <SectionSliderCollections />
-        </div>
-
-        {/* SUBCRIBES */}
-        <SectionBecomeAnAuthor />
       </div>
     </div>
   );
