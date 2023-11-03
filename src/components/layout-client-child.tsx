@@ -2,7 +2,6 @@
 
 import React, { ReactNode, useEffect, useState } from "react";
 import { Poppins } from "next/font/google";
-import "./globals.css";
 import "@/styles/index.scss";
 import "rc-slider/assets/index.css";
 import Footer from "@/shared/Footer/Footer";
