@@ -22,7 +22,7 @@ const NftDetailPage = ({}) => {
         {/* ---------- 1 ----------  */}
         <div className="pb-9 space-y-5">
           <div className="flex justify-between items-center">
-            <Badge href="/collection" name="Virtual Worlds" color="green" />
+            <Badge href="/" name="Virtual Worlds" color="green" />
             <LikeSaveBtns />
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
