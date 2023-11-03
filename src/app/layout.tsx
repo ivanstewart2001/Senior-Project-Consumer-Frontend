@@ -1,25 +1,7 @@
-"use client";
-
-import { createContext, useContext, useState } from "react";
-import { Poppins } from "next/font/google";
 import "./globals.css";
 import "@/styles/index.scss";
 import "rc-slider/assets/index.css";
-import Footer from "@/shared/Footer/Footer";
-import MusicPlayer from "@/components/MusicPlayer/MusicPlayer";
-import SiteHeader from "@/app/SiteHeader";
-import UnauthenticatedSiteHeader from "./UnauthenticatedSiteHeader";
-
-export const AuthContext = createContext({
-  isAuthenticated: false,
-  toggleAuthentication: () => {},
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
+import LayoutClientChild from "./layout-client-child";
 
 export const metadata = {
   title: "Senior Project - Consumer",
@@ -31,23 +13,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  const toggleAuthentication = () => {
-    setIsAuthenticated(!isAuthenticated);
-  };
-
-  // Provide the authentication state and functions
-  return (
-    <AuthContext.Provider value={{ isAuthenticated, toggleAuthentication }}>
-      <html lang="en" className={poppins.className}>
-        <body className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
-          {isAuthenticated ? <SiteHeader /> : <UnauthenticatedSiteHeader />}
-          {children}
-          <Footer />
-          <MusicPlayer />
-        </body>
-      </html>
-    </AuthContext.Provider>
-  );
+  return <LayoutClientChild>{children}</LayoutClientChild>;
 }

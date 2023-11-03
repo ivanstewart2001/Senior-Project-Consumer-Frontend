@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import NcImage from "@/shared/NcImage/NcImage";
 import collectionBanner from "@/images/nfts/collectionBanner.png";
 import { nftsImgs } from "@/contains/fakeData";
@@ -11,6 +11,7 @@ import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import Pagination from "@/shared/Pagination/Pagination";
 import CardNFT from "@/components/CardNFT";
 import TabFilters from "@/components/TabFilters";
+import AuthContext from "@/context/auth/AuthContext";
 
 let AccountActions = [
   {
@@ -39,7 +40,7 @@ let AccountActions = [
   },
 ];
 
-const PageCollection = () => {
+const HomePage = () => {
   return (
     <div className={`nc-PageCollection`}>
       {/* HEADER */}
@@ -92,4 +93,4 @@ const PageCollection = () => {
   );
 };
 
-export default PageCollection;
+export default HomePage;

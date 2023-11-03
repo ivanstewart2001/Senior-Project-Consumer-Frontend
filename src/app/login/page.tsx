@@ -9,7 +9,7 @@ import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { AuthContext } from "../layout";
+import AuthContext from "@/context/auth/AuthContext";
 
 const loginSocials = [
   {

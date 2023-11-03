@@ -5,7 +5,7 @@ import { avatarImgs } from "@/contains/fakeData";
 import { Fragment, useContext } from "react";
 import Avatar from "@/shared/Avatar/Avatar";
 import Link from "next/link";
-import { AuthContext } from "@/app/layout";
+import AuthContext from "@/context/auth/AuthContext";
 
 export default function AvatarDropdown() {
   const { toggleAuthentication } = useContext(AuthContext);
