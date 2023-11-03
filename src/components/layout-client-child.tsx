@@ -8,7 +8,7 @@ import "rc-slider/assets/index.css";
 import Footer from "@/shared/Footer/Footer";
 import MusicPlayer from "@/components/MusicPlayer/MusicPlayer";
 import SiteHeader from "@/app/SiteHeader";
-import UnauthenticatedSiteHeader from "./UnauthenticatedSiteHeader";
+import UnauthenticatedSiteHeader from "../app/UnauthenticatedSiteHeader";
 import AuthClientComponentWrapper from "@/context/auth/AuthClientComponentWrapper";
 import { useContext } from "react";
 import AuthContext from "@/context/auth/AuthContext";
