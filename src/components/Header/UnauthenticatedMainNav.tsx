@@ -3,6 +3,9 @@ import Logo from "@/shared/Logo/Logo";
 import SwitchDarkMode from "@/shared/SwitchDarkMode/SwitchDarkMode";
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import { usePathname } from "next/navigation";
+import NotifyDropdown from "./NotifyDropdown";
+import AvatarDropdown from "./AvatarDropdown";
+import MenuBar from "@/shared/MenuBar/MenuBar";
 
 export interface UnauthenticatedMainNavProps {}
 
@@ -27,6 +30,9 @@ const UnauthenticatedMainNav: FC<UnauthenticatedMainNavProps> = () => {
               </ButtonPrimary>
               <SwitchDarkMode />
             </div>
+          </div>
+          <div className="flex items-center space-x-1 xl:hidden">
+            <MenuBar />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import ButtonClose from "@/shared/ButtonClose/ButtonClose";
 import Logo from "@/shared/Logo/Logo";
 import { Disclosure } from "@/app/headlessui";
@@ -11,6 +11,7 @@ import SocialsList from "@/shared/SocialsList/SocialsList";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import SwitchDarkMode from "@/shared/SwitchDarkMode/SwitchDarkMode";
 import Link from "next/link";
+import AuthContext from "@/context/auth/AuthContext";
 
 export interface NavMobileProps {
   data?: NavItemType[];
@@ -21,6 +22,8 @@ const NavMobile: React.FC<NavMobileProps> = ({
   data = NAVIGATION_DEMO_2,
   onClickClose,
 }) => {
+  const { toggleAuthentication, isAuthenticated } = useContext(AuthContext);
+
   const _renderMenuChild = (
     item: NavItemType,
     itemClass = " pl-3 text-neutral-900 dark:text-neutral-200 font-medium "
@@ -185,13 +188,25 @@ const NavMobile: React.FC<NavMobileProps> = ({
 
         <div className="mt-5">{renderSearchForm()}</div>
       </div>
-      <ul className="flex flex-col py-6 px-2 space-y-1">
-        {data.map(_renderItem)}
-      </ul>
+      {isAuthenticated ? (
+        <ul className="flex flex-col py-6 px-2 space-y-1">
+          {data.map(_renderItem)}
+        </ul>
+      ) : null}
       <div className="flex items-center justify-between py-6 px-5 space-x-2">
-        <ButtonPrimary href={"/"} className="!px-10">
-          Buy this template
-        </ButtonPrimary>
+        {isAuthenticated ? (
+          <ButtonPrimary
+            onClick={toggleAuthentication}
+            href={"/login"}
+            className="!px-10"
+          >
+            Logout
+          </ButtonPrimary>
+        ) : (
+          <ButtonPrimary href={"/login"} className="!px-10">
+            Login
+          </ButtonPrimary>
+        )}
       </div>
     </div>
   );
