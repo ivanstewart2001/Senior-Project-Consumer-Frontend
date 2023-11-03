@@ -10,8 +10,6 @@ import MusicPlayer from "@/components/MusicPlayer/MusicPlayer";
 import SiteHeader from "@/app/SiteHeader";
 import UnauthenticatedSiteHeader from "../app/UnauthenticatedSiteHeader";
 import AuthClientComponentWrapper from "@/context/auth/AuthClientComponentWrapper";
-import { useContext } from "react";
-import AuthContext from "@/context/auth/AuthContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
